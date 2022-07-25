@@ -53,7 +53,7 @@ export function Task() {
     }
 
     const completedTotal = tasks.filter(tarefa => tarefa.isCompleted);
-    console.log(completedTotal)
+
 
 
     return (
