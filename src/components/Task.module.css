@@ -44,3 +44,108 @@
     text-decoration: line-through;
     opacity: 0.4;
 }
+
+.taskList{
+    color: var(--gray-300);
+    line-height: 140%;
+    font-size: 1rem;
+    font-family: Inter, sans-serif;
+    margin-top: 25px;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.taskList > img{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+.taskList > span{
+    font-weight: bold;
+}
+
+.taskList > p{
+    font-weight: regular;
+}
+
+main{
+    margin: 0 auto;
+    width: 52%;
+}
+
+.inputArea{
+    height: 54px;
+    margin-top: -25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inputArea input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding-left: 20px;
+    color: var(--gray-300);
+    background: var(--gray-500);
+    font-family: Inter, sans-serif;
+    font-weight: regular;
+    font-size: 1rem;
+}
+
+.inputArea button[type="submit"]{
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+    color: var(--gray-100);
+    background: var(--blue-dark);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputArea button[type="submit"]:not(:disabled):hover{
+    background: var(--blue);
+    transition: background-color 0.3s;
+}
+
+.inputArea input:focus{
+    outline: 1px solid var(--purple-dark)
+}
+
+.labels{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.labels p:first-child{
+  color: var(--blue);
+}
+
+.labels p{
+    margin-top: 70px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--purple);
+}
+
+
+.labels p > span {
+    color: var(--gray-200);
+    background: var(--gray-400);
+    font-family: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 99px
+}
