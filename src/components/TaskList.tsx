@@ -29,7 +29,7 @@ export function TaskList() {
         }
 
         tasks.map(tarefa => {
-            if (tarefa.title == newTask) {
+            if (tarefa.title == newTask.trim()) {
                 alert("Tarefa já criada...")
                 error = true;
                 setNewTask('')
