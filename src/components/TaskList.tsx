@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { PlusCircle, Trash } from "phosphor-react";
+import * as Checkbox from '@radix-ui/react-checkbox';
+import { Check, PlusCircle, Trash } from "phosphor-react";
 import Clipboard from '../assets/Clipboard.svg'
 import styles from './TaskList.module.css'
 import { v4 as uuidv4 } from 'uuid';
@@ -94,7 +95,7 @@ export function TaskList() {
                 <button
                     type="submit">
                     Criar
-                    <PlusCircle size={15.97} />
+                    <PlusCircle size={18} />
                 </button>
             </form>
 
@@ -121,17 +122,23 @@ export function TaskList() {
 
                     return (
                         <div className={styles.task} key={task.id}>
-                            <input
-                                type="checkbox"
+                            <Checkbox.Root 
+                                className={styles.checkbox}
                                 defaultChecked={task.isCompleted}
-                                onClick={() => handleCompleteTask(task.id)} />
-
+                                onClick={() => handleCompleteTask(task.id)} 
+                                >
+                                <Checkbox.Indicator className={styles.checkboxIndicator}>
+                                    <Check
+                                    size={14}
+                                    weight={'regular'}/>
+                                </Checkbox.Indicator>
+                            </Checkbox.Root>
                             <p className={task.isCompleted ? styles.taskCompleted : ''}>{task.title}</p>
 
                             <button
+                                className={styles.deleteButton}
                                 onClick={() => handleDeleteTask(task.id)}>
-                                <Trash />
-
+                                <Trash size={18} />
                             </button>
                         </div>
                     )
